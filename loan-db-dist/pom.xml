@@ -41,7 +41,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
 		<flyway.validateOnMigrate>true</flyway.validateOnMigrate>
-		<dbunit.driver>oracle.jdbc.OracleDriver</dbunit.driver>
+		<dbunit.driver>oracle.jdbc.driver.OracleDriver</dbunit.driver>
 		<oracle.version>12.1.0.2</oracle.version>
       </properties>
     </profile>
@@ -236,7 +236,7 @@
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>sql-maven-plugin</artifactId>
           <configuration>
-            <driver>oracle.jdbc.OracleDriver</driver>
+            <driver>oracle.jdbc.driver.OracleDriver</driver>
             <url>${db.url}</url>
             <username>${db.ddlusername}</username>
             <password>${db.ddlpassword}</password>
