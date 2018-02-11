@@ -1,4 +1,4 @@
-package com.loan.customer.search.componet;
+package com.loan.customer.search;
 
 import java.util.List;
 
@@ -6,9 +6,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
-import com.loan.customer.search.entity.Customer;
-import com.loan.customer.search.repository.CustomerRepository;
 
 @Component
 public class SearchComponent {
@@ -22,7 +19,7 @@ public class SearchComponent {
 		this.customerRepository = customerRepository;
 	}
 
-	public List<Customer> search(SearchQuery query){
+	public List<CustomerSearch> search(SearchQuery query){
 				return null; 
 	}
 
