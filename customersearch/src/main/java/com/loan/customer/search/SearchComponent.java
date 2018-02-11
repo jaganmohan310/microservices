@@ -13,14 +13,14 @@ public class SearchComponent {
 	private CustomerRepository customerRepository;
 	private static final Logger logger = LoggerFactory.getLogger(SearchComponent.class);
 	
-	
 	@Autowired
 	public SearchComponent(CustomerRepository customerRepository){
 		this.customerRepository = customerRepository;
 	}
 
 	public List<CustomerSearch> search(SearchQuery query){
-				return null; 
+		List<CustomerSearch>  customerSearchList=customerRepository.findByLastNameOrSocialSecuirtyId(query.getLastName(), query.getSocialSecuirtyId());
+		return customerSearchList; 
 	}
 
 }

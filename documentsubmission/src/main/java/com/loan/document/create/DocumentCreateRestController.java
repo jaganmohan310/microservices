@@ -1,4 +1,4 @@
-package com.loan.customer.search;
+package com.loan.document.create;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,20 +13,21 @@ import org.springframework.web.bind.annotation.RestController;
 //Enabling Cross Origin Requests for a RESTful Web Service
 @CrossOrigin
 @RestController
-@RequestMapping("/search")
-public class SearchRestController {
+@RequestMapping("/documentcreate")
+public class DocumentCreateRestController {
 	
-	  private SearchComponent searchComponent;
+	  private CreateDocumentComponent createDocumentComponent;
 	 
-	  @Autowired public SearchRestController(SearchComponent searchComponent){
-	  this.searchComponent = searchComponent; }
+	  @Autowired
+	  public DocumentCreateRestController(CreateDocumentComponent createDocumentComponent){
+	  this.createDocumentComponent = createDocumentComponent; }
 	 
 
-	@RequestMapping(value = "/get", method = RequestMethod.POST)
-	public List<CustomerSearch> search(@RequestBody SearchQuery query) {
+	@RequestMapping(value = "/documentcreatepath", method = RequestMethod.POST)
+	public DocumentCreate search(@RequestBody CreateDocumentQuery query) {
 		System.out.println("Input Welcome");
 		System.out.println("Query:" + query);
-		return searchComponent.search(query);
+		return createDocumentComponent.documentCreate(query);
 	}
 
 }

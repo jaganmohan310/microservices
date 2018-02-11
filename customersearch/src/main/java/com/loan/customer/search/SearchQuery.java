@@ -2,8 +2,8 @@ package com.loan.customer.search;
 
 public class SearchQuery {
 
-	String pannumber;
-	String creationDate;
+	private String lastName;
+	private	String socialSecuirtyId;
 
 	public SearchQuery() {
 		super();
@@ -11,30 +11,30 @@ public class SearchQuery {
 
 	@Override
 	public String toString() {
-		return "SearchQuery [pannumber=" + pannumber + ", creationDate=" + creationDate + "]";
+		return "SearchQuery [lastName=" + lastName + ", socialSecuirtyId=" + socialSecuirtyId + "]";
 	}
 
 	public SearchQuery(String pannumber, String creationDate) {
 		super();
-		this.creationDate = creationDate;
-		this.pannumber = pannumber;
+		this.lastName = lastName;
+		this.socialSecuirtyId = socialSecuirtyId;
 
 	}
 
-	public String getPannumber() {
-		return pannumber;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setPannumber(String pannumber) {
-		this.pannumber = pannumber;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getCreationDate() {
-		return creationDate;
+	public String getSocialSecuirtyId() {
+		return socialSecuirtyId;
 	}
 
-	public void setCreationDate(String creationDate) {
-		this.creationDate = creationDate;
+	public void setSocialSecuirtyId(String socialSecuirtyId) {
+		this.socialSecuirtyId = socialSecuirtyId;
 	}
 
 }

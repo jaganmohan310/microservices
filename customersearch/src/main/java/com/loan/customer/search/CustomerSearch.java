@@ -26,7 +26,7 @@ public class CustomerSearch {
 	private String lastName;
 
 	@Column(name = "DATE_OF_BIRTH", nullable = false, insertable = true, updatable = true)
-	private LocalDate dateofBirth;
+	private String dateofBirth;
 
 	@Column(name = "GENDER", nullable = false, insertable = true, updatable = true)
 	private Character gender;
@@ -70,11 +70,11 @@ public class CustomerSearch {
 		this.lastName = lastName;
 	}
 
-	public LocalDate getDateofBirth() {
+	public String getDateofBirth() {
 		return dateofBirth;
 	}
 
-	public void setDateofBirth(LocalDate dateofBirth) {
+	public void setDateofBirth(String dateofBirth) {
 		this.dateofBirth = dateofBirth;
 	}
 
