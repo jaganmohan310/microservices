@@ -1,5 +1,7 @@
 package com.loan.document.create;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ public class CreateDocumentComponent {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
+	@Transactional
 	public DocumentCreate documentCreate(CreateDocumentQuery query) {
 		DocumentCreate documentCreate = documentRepository.save(convertdocumentCreateEntity(query));
 		kafkaTemplate.send("test", documentCreate.getDocumentId().toString(), "camunda_jagan_ravi");
