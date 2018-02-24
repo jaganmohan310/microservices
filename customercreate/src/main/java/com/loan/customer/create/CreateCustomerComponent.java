@@ -1,5 +1,7 @@
 package com.loan.customer.create;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +21,7 @@ public class CreateCustomerComponent {
 		this.kafkaTemplate =kafkaTemplate;
 	}
 
+	@Transactional
 	public CustomerCreate customerCreate(CreateCustomerQuery query) {
 		CustomerCreate customerCreate =customerRepository.save(convertCustomerCreateEntity(query));
 		kafkaTemplate.send("test",customerCreate.getCustomerID().toString(), "jagan");
