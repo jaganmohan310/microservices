@@ -24,12 +24,12 @@ public class DocumentCreateRestController {
 	 
 
 	@RequestMapping(value = "/documentcreatepath", method = RequestMethod.POST)
-	public CreateDocumentQuery search(@RequestBody CreateDocumentQuery query) {
+	public DocumentCreate search(@RequestBody CreateDocumentQuery query) {
 		//DocumentCreate
 		System.out.println("Input Welcome");
 		System.out.println("Query:" + query.getDocumentStatus());
-		return query;
-		//return createDocumentComponent.documentCreate(query);
+		//return query;
+		return createDocumentComponent.documentCreate(query);
 	}
 
 }
