@@ -26,7 +26,7 @@ public class CreateCustomerComponent {
 	}
 
 	private CustomerCreate convertCustomerCreateEntity(CreateCustomerQuery query) {
-		CustomerCreate customerCreate = new CustomerCreate();
+		/*CustomerCreate customerCreate = new CustomerCreate();
 		customerCreate.setLastName(query.getLastName());
 		customerCreate.setFirstName(query.getFirstName());
 		customerCreate.setDateofBirth(query.getDateofBirth());
@@ -37,8 +37,8 @@ public class CreateCustomerComponent {
 		customerCreate.setResidentialAdreess(query.getResidentialAdreess());
 		customerCreate.setCommunicationAdreess(query.getCommunicationAdreess());
 		customerCreate.setKycStatus("Inprogress");
-		customerCreate.setCreditScore(0L);
-		return customerCreate;
+		customerCreate.setCreditScore(0L);*/
+		return null;
 	}
 
 }

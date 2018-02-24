@@ -23,10 +23,11 @@ public class CustomerCreateRestController {
 	 
 
 	@RequestMapping(value = "/customercreatepath", method = RequestMethod.POST)
-	public CustomerCreate search(@RequestBody CreateCustomerQuery query) {
+	public CreateCustomerQuery search(@RequestBody CreateCustomerQuery query) {
 		System.out.println("Input Welcome");
 		System.out.println("Query:" + query);
-		return createCustomerComponent.customerCreate(query);
+		return query;
+	//	return createCustomerComponent.customerCreate(query);
 	}
 
 }
