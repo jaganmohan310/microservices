@@ -15,20 +15,22 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/accountcreate")
 public class AccountCreateRestController {
-	
-	  private CreateAccountComponent createAccountComponent;
-	 
-	  @Autowired public AccountCreateRestController(CreateAccountComponent createAccountComponent){
-	  this.createAccountComponent = createAccountComponent; }
-	 
+
+	private CreateAccountComponent createAccountComponent;
+
+	@Autowired
+	public AccountCreateRestController(CreateAccountComponent createAccountComponent) {
+		this.createAccountComponent = createAccountComponent;
+	}
 
 	@RequestMapping(value = "/accountcreatepath", method = RequestMethod.POST)
-	public CreateAccountQuery search(@RequestBody CreateAccountQuery query) {
-		//AccountCreate
+	public AccountCreate search(@RequestBody CreateAccountQuery query) {
+		// AccountCreate
 		System.out.println("Input Welcome------------>");
 		System.out.println("Query:" + query.getApprovedLoanAmount());
-		return query;
-		//return createAccountComponent.accountCreate(query);
+		// return query;
+	     return  this.createAccountComponent.accountCreate(query);
+	     
 	}
 
 }

@@ -32,6 +32,7 @@ public class CreateAccountComponent {
 		accountCreate.setAccountName(query.getAccountName());
 		accountCreate.setApprovedLoanAmount(query.getApprovedLoanAmount());
 		accountCreate.setArrears(query.getArrears());
+		
 		accountCreate.setCharges(query.getCharges());
 		accountCreate.setDisbursedLoanAmount(query.getDisbursedLoanAmount());
 		accountCreate.setFirst_Next_InstallmentAmount(query.getFirst_Next_InstallmentAmount());
