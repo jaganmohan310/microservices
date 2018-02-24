@@ -23,12 +23,12 @@ public class ProductCreateRestController {
 	 
 
 	@RequestMapping(value = "/productcreatepath", method = RequestMethod.POST)
-	public CreateProductQuery search(@RequestBody CreateProductQuery query) {
+	public ProductCreate search(@RequestBody CreateProductQuery query) {
 		//ProductCreate
 		System.out.println("Input Welcome");
 		System.out.println("Query:" + query);
-		return query;
-		//return createProductComponent.productCreate(query);
+		//return query;
+		return createProductComponent.productCreate(query);
 	}
 
 }

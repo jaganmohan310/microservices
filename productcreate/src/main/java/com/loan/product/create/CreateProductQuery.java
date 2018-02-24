@@ -3,6 +3,16 @@ package com.loan.product.create;
 import java.io.Serializable;
 
 public class CreateProductQuery implements Serializable {
+	
+	private Long product_ID;
+
+	public Long getProduct_ID() {
+		return product_ID;
+	}
+
+	public void setProduct_ID(Long product_ID) {
+		this.product_ID = product_ID;
+	}
 
 	private String productType;
 
