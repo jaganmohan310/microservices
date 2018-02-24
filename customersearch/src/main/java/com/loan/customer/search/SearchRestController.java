@@ -23,14 +23,14 @@ public class SearchRestController {
 	 
 
 	@RequestMapping(value = "/get", method = RequestMethod.POST)
-	public SearchQuery search(@RequestBody SearchQuery query) {
-		//List<CustomerSearch>
+	public List<CustomerSearch> search(@RequestBody SearchQuery query) {
 		System.out.println("Input Welcome Search Query");
 		System.out.println("Query:" + query);
 		List<CustomerSearch> customerSearch= searchComponent.search(query);
 		System.out.println("*****************" + customerSearch.get(0).getContactNumber());
 		System.out.println("*****************" + customerSearch.get(0).getEmailId());
-		return query;
+		
+		return customerSearch;
 		
 	}
 

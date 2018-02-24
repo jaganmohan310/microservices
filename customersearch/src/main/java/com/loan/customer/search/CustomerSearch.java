@@ -1,13 +1,8 @@
 package com.loan.customer.search;
 
-import java.time.LocalDate;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 @Table(name = "CUSTOMER_SEARCH")
@@ -15,8 +10,7 @@ import javax.persistence.Table;
 public class CustomerSearch {
 
 	@Id
-	@SequenceGenerator(name = "CUSTOMER_ID", sequenceName = "CUSTOMER_SEARCH_SEQ", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "CUSTOMERID")
 	private Long customerID;
 
 	@Column(name = "FIRST_NAME", nullable = false, insertable = true, updatable = true, length = 125)
