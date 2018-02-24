@@ -23,10 +23,12 @@ public class AccountCreateRestController {
 	 
 
 	@RequestMapping(value = "/accountcreatepath", method = RequestMethod.POST)
-	public AccountCreate search(@RequestBody CreateAccountQuery query) {
-		System.out.println("Input Welcome");
-		System.out.println("Query:" + query);
-		return createAccountComponent.accountCreate(query);
+	public CreateAccountQuery search(@RequestBody CreateAccountQuery query) {
+		//AccountCreate
+		System.out.println("Input Welcome------------>");
+		System.out.println("Query:" + query.getApprovedLoanAmount());
+		return query;
+		//return createAccountComponent.accountCreate(query);
 	}
 
 }
