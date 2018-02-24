@@ -1,5 +1,7 @@
 package com.loan.account.create;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,7 @@ public class CreateAccountComponent {
 		this.kafkaTemplate = kafkaTemplate;
 	}
 
+	@Transactional
 	public AccountCreate accountCreate(CreateAccountQuery query) {
 		AccountCreate accountCreate = accountRepository.save(convertAccountCreateEntity(query));
 		kafkaTemplate.send("test", accountCreate.getAccountNumber().toString(), "camunda_jagan_ravi");
