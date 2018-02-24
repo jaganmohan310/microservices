@@ -23,10 +23,12 @@ public class SearchRestController {
 	 
 
 	@RequestMapping(value = "/get", method = RequestMethod.POST)
-	public List<CustomerSearch> search(@RequestBody SearchQuery query) {
-		System.out.println("Input Welcome");
+	public SearchQuery search(@RequestBody SearchQuery query) {
+		//List<CustomerSearch>
+		System.out.println("Input Welcome Search Query");
 		System.out.println("Query:" + query);
-		return searchComponent.search(query);
+		//return searchComponent.search(query);
+		return query;
 	}
 
 }
