@@ -2,6 +2,8 @@ package com.loan.customer.search;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,7 @@ public class SearchComponent {
 		this.customerRepository = customerRepository;
 	}
 
+	@Transactional
 	public List<CustomerSearch> search(SearchQuery query){
 		List<CustomerSearch>  customerSearchList=customerRepository.findByLastNameOrSocialSecuirtyId(query.getLastName(), query.getSocialSecuirtyId());
 		return customerSearchList; 

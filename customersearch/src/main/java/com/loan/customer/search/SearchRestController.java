@@ -27,8 +27,11 @@ public class SearchRestController {
 		//List<CustomerSearch>
 		System.out.println("Input Welcome Search Query");
 		System.out.println("Query:" + query);
-		//return searchComponent.search(query);
+		List<CustomerSearch> customerSearch= searchComponent.search(query);
+		System.out.println("*****************" + customerSearch.get(0).getContactNumber());
+		System.out.println("*****************" + customerSearch.get(0).getEmailId());
 		return query;
+		
 	}
 
 }
