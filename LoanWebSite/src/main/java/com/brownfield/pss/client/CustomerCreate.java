@@ -1,7 +1,7 @@
 package com.brownfield.pss.client;
 
  
-public class Flight {
+public class CustomerCreate {
 
   	long id;
 	
@@ -16,7 +16,7 @@ public class Flight {
 	
 	
 
-	public Flight() {
+	public CustomerCreate() {
 		super();
 	}
 	
@@ -24,7 +24,7 @@ public class Flight {
  
 
 
-	public Flight(String flightNumber, String origin, String destination, String flightDate, Fares fares) {
+	public CustomerCreate(String flightNumber, String origin, String destination, String flightDate, Fares fares) {
 		super();
 		this.flightNumber = flightNumber;
 		this.origin = origin;
