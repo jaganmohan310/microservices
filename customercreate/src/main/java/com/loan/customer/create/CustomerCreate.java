@@ -1,6 +1,7 @@
 package com.loan.customer.create;
 
 import java.io.Serializable;
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +15,15 @@ import javax.persistence.Table;
 @Entity
 public class CustomerCreate  implements Serializable {
 
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = -4317288298970639481L;
+
 	@Id
 	@SequenceGenerator(name = "CUSTOMER_ID", sequenceName = "CUSTOMER_CREATE_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "CUSTOMER_ID")
 	private Long customerID;
 
 	@Column(name = "FIRST_NAME", nullable = false, insertable = true, updatable = true, length = 125)

@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class CustomerSearch {
 
 	@Id
-	@Column(name = "CUSTOMERID")
+	@Column(name = "CUSTOMER_ID")
 	private Long customerID;
 
 	@Column(name = "FIRST_NAME", nullable = false, insertable = true, updatable = true, length = 125)
@@ -39,6 +39,12 @@ public class CustomerSearch {
 
 	@Column(name = "COMMUNICATION_ADDRESS", nullable = false, insertable = true, updatable = true)
 	private String communicationAdreess;
+
+	@Column(name = "KYC_STATUS", nullable = false, insertable = true, updatable = true)
+	private String kycStatus;
+
+	@Column(name = "CREDIT_SCORE", nullable = false, insertable = true, updatable = true)
+	private Long creditScore;
 
 	public Long getCustomerID() {
 		return customerID;
@@ -118,6 +124,22 @@ public class CustomerSearch {
 
 	public void setCommunicationAdreess(String communicationAdreess) {
 		this.communicationAdreess = communicationAdreess;
+	}
+
+	public String getKycStatus() {
+		return kycStatus;
+	}
+
+	public void setKycStatus(String kycStatus) {
+		this.kycStatus = kycStatus;
+	}
+
+	public Long getCreditScore() {
+		return creditScore;
+	}
+
+	public void setCreditScore(Long creditScore) {
+		this.creditScore = creditScore;
 	}
 
 }

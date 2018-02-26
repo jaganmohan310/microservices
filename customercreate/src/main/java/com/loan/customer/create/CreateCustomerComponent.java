@@ -5,12 +5,19 @@ import javax.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Component
 public class CreateCustomerComponent {
 
+	@Value("${kafka.topic.customer.info}")
+    private String customerInfoTopic;
+	
 	private KafkaTemplate<String, String> kafkaTemplate;
 	private CreateCustomerRepository customerRepository;
 	private static final Logger logger = LoggerFactory.getLogger(CreateCustomerComponent.class);
@@ -23,13 +30,33 @@ public class CreateCustomerComponent {
 
 	@Transactional
 	public CustomerCreate customerCreate(CreateCustomerQuery query) {
-		CustomerCreate customerCreate =customerRepository.save(convertCustomerCreateEntity(query));
-		kafkaTemplate.send("test",customerCreate.getCustomerID().toString(), "jagan");
+		CustomerCreate customerCreate=null;
+		CustomerCreate customer=	customerRepository.findBySocialSecuirtyId(query.getSocialSecuirtyId());
+	     if(customer!=null) {
+	    	 convertCustomerCreateEntity(query, customer);
+	    	 customerCreate = customerRepository.save(customer);
+	     }else {
+	     customerCreate =new CustomerCreate();
+	     customerCreate.setKycStatus("Inprogress");
+		 customerCreate.setCreditScore(0L);
+		 customerCreate =customerRepository.save(convertCustomerCreateEntity(query,customerCreate));
+	     } 
+		sendCustomer(customerCreate);
 		 return customerCreate;
 	}
 
-	private CustomerCreate convertCustomerCreateEntity(CreateCustomerQuery query) {
-		CustomerCreate customerCreate = new CustomerCreate();
+	private void sendCustomer(CustomerCreate customerCreate) {
+		ObjectMapper mapperObj = new ObjectMapper();
+		 String jsonStr=null;
+		 try {
+			  jsonStr = mapperObj.writeValueAsString(customerCreate);
+		} catch (JsonProcessingException e) {
+			e.printStackTrace();
+		}
+		 kafkaTemplate.send(customerInfoTopic,customerCreate.getCustomerID().toString(), jsonStr);
+	}
+
+	private CustomerCreate convertCustomerCreateEntity(CreateCustomerQuery query, CustomerCreate customerCreate) {
 		customerCreate.setLastName(query.getLastName());
 		customerCreate.setFirstName(query.getFirstName());
 		customerCreate.setDateofBirth(query.getDateofBirth());
@@ -39,8 +66,6 @@ public class CreateCustomerComponent {
 		customerCreate.setSocialSecuirtyId(query.getSocialSecuirtyId());
 		customerCreate.setResidentialAdreess(query.getResidentialAdreess());
 		customerCreate.setCommunicationAdreess(query.getCommunicationAdreess());
-		customerCreate.setKycStatus("Inprogress");
-		customerCreate.setCreditScore(0L);
 		return customerCreate;
 	}
 

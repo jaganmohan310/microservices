@@ -1,0 +1,37 @@
+.input100 {
+  font-family: Poppins-Medium;
+  font-size: 20px;
+  line-height: 1;
+  color: #666666;
+  margin: auto;
+  display: block;
+  width: 30%;
+  background: #e6e6e6;
+  height: 20px;
+  border-radius: 20px;
+  padding: 0 68px 0 68px;
+}
+.inputBtn {
+  font-family: Poppins-Medium;
+  font-size: 20px;
+  line-height: 1;
+  color: white;
+  margin: auto;
+  display: block;
+  width: 30%;
+  background: black;
+  height: 20px;
+  border-radius: 20px;
+  padding: 0 68px 0 68px;
+}	
+.backGroundImage{
+	background-color: #00c7c7;
+	background-image: url("BlueTitle.png");
+}
+.center {
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+}
+
+ 

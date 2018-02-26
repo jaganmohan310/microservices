@@ -1,6 +1,5 @@
 package com.loan.customer.search;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,12 +23,7 @@ public class SearchRestController {
 
 	@RequestMapping(value = "/get", method = RequestMethod.POST)
 	public List<CustomerSearch> search(@RequestBody SearchQuery query) {
-		System.out.println("Input Welcome Search Query");
-		System.out.println("Query:" + query);
 		List<CustomerSearch> customerSearch= searchComponent.search(query);
-		System.out.println("*****************" + customerSearch.get(0).getContactNumber());
-		System.out.println("*****************" + customerSearch.get(0).getEmailId());
-		
 		return customerSearch;
 		
 	}

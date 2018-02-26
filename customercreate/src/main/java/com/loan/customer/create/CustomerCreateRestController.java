@@ -1,8 +1,5 @@
 package com.loan.customer.create;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,9 +21,6 @@ public class CustomerCreateRestController {
 
 	@RequestMapping(value = "/customercreatepath", method = RequestMethod.POST)
 	public CustomerCreate search(@RequestBody CreateCustomerQuery query) {
-		System.out.println("Input Welcome");
-		System.out.println("Query:" + query);
-		//return query;
 	    return this.createCustomerComponent.customerCreate(query);
 	}
 
