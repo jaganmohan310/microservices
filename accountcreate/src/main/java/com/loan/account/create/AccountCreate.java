@@ -14,13 +14,26 @@ import javax.persistence.Table;
 @Entity
 public class AccountCreate implements Serializable {
 
+	
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 4449755910624119662L;
+
 	@Id
 	@SequenceGenerator(name = "ACCOUNT_NUMBER", sequenceName = "ACCOUNT_CREATE_SEQ", allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name ="ACCOUNT_NUMBER")
 	private Long accountNumber;
 
 	@Column(name = "ACCOUNT_NAME", nullable = false, insertable = true, updatable = true, length = 125)
 	private String accountName;
+	
+	@Column(name = "PRODUCT_TYPE", nullable = false, insertable = true, updatable = true, length = 125)
+	private String productType;
+	
+	@Column(name = "CUSTOMER_ID")
+	private Long customerId;
 
 	@Column(name = "APPROVED_LOAN_AMOUNT ", nullable = false, insertable = true, updatable = true, length = 125)
 	private Long approvedLoanAmount;
@@ -125,5 +138,22 @@ public class AccountCreate implements Serializable {
 	public void setCharges(Long charges) {
 		this.charges = charges;
 	}
+	
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+
 
 }

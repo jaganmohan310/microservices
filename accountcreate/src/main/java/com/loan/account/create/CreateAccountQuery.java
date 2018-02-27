@@ -4,7 +4,16 @@ import java.io.Serializable;
 
 public class CreateAccountQuery implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8228095967717285638L;
+
 	private String accountName;
+	
+	private String productType;
+	
+	private Long customerId;
 
 	private Long approvedLoanAmount;
 
@@ -93,5 +102,22 @@ public class CreateAccountQuery implements Serializable {
 	public void setCharges(Long charges) {
 		this.charges = charges;
 	}
+
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
+	
 
 }
