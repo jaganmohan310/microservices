@@ -14,7 +14,7 @@
 	  <div style="width: 500px; margin: 0 auto;"><h2>Account <a href="account"><font color="blue">Create</font></a></h2></div>
 	  <div style="width: 500px; margin: 0 auto;"><h2>Customer <a href="search"><font color="blue">Search</font></a></h2></div>
 	  <div style="width: 500px; margin: 0 auto;"><h2>Product <a href="product"><font color="blue">Create</font></a></h2></div>
-	  <div style="width: 500px; margin: 0 auto;"><h2>Documents <a href="documents"><font color="blue">Submission</font></a></h2></div>
+	  <div style="width: 500px; margin: 0 auto;"><h2>Documents <a href="document"><font color="blue">Submission</font></a></h2></div>
 	  
 	  <br><br>
 	  <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Evry India Pvt Ltd</h1></div>

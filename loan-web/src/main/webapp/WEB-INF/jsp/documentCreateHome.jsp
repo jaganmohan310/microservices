@@ -64,7 +64,7 @@
 			</div>
 			<div>
 				<form:select path="documentStatus">
-					<form:option value="VERIFIEDorSUBMITTED" label="VERIFIEDorSUBMITTED" />					
+					<form:option value="VERIFIEDAndSUBMITTED" label="VERIFIEDAndSUBMITTED" />					
 				</form:select>
 
 
