@@ -1,8 +1,7 @@
 package com.loan.product.create;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -16,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/productcreate")
 public class ProductCreateRestController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(ProductCreateRestController.class);
+	
 	  private CreateProductComponent createProductComponent;
 	 
 	  @Autowired public ProductCreateRestController(CreateProductComponent createProductComponent){
@@ -24,10 +25,7 @@ public class ProductCreateRestController {
 
 	@RequestMapping(value = "/productcreatepath", method = RequestMethod.POST)
 	public ProductCreate search(@RequestBody CreateProductQuery query) {
-		//ProductCreate
-		System.out.println("Input Welcome");
-		System.out.println("Query:" + query);
-		//return query;
+		logger.info("Enter  in to ProductCreate Service");
 		return createProductComponent.productCreate(query);
 	}
 
