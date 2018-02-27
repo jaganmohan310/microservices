@@ -19,7 +19,7 @@ public class CreateDocumentComponent {
 
 	private CreateDocumentRepository documentRepository;
 	
-	@Value("${kafka.topic.customer.info}")
+	@Value("${kafka.topic.customer.create.info}")
     private String customerInfoTopic;
 	
 	private static final Logger logger = LoggerFactory.getLogger(CreateDocumentComponent.class);
@@ -37,9 +37,9 @@ public class CreateDocumentComponent {
 		List<String> documentTypeList = getDocumentTypeList();
 		List<DocumentCreate> documentCreateList = documentRepository.findByDocumentTypeInAndCustomerId(documentTypeList,query.getCustomerId());
 		if(documentCreateList.size() ==4) {
-		kafkaTemplate.send(customerInfoTopic, documentCreate.getDocumentId().toString(), "VERIFIED");
+		kafkaTemplate.send(customerInfoTopic, documentCreate.getCustomerId().toString(), "VERIFIED");
 		}else {
-			kafkaTemplate.send(customerInfoTopic, documentCreate.getDocumentId().toString(), "PARTIALLY_VERIFIED");
+			kafkaTemplate.send(customerInfoTopic, documentCreate.getCustomerId().toString(), "PARTIALLY_VERIFIED");
 		}
 		return documentCreate;
 	}
