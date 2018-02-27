@@ -14,6 +14,11 @@ import javax.persistence.Table;
 @Entity
 public class DocumentCreate implements Serializable {
 
+	/**
+	 * serialVersionUID
+	 */
+	private static final long serialVersionUID = 3992373269953124295L;
+
 	@Id
 	@Column(name = "DOCUMENT_ID")
 	private Long documentId;

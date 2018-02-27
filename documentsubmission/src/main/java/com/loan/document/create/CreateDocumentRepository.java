@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface CreateDocumentRepository extends JpaRepository<DocumentCreate, Long> {
 
-	List<DocumentCreate> findByDocumentTypeInAndDocumentId(List<String> documentType);
+	List<DocumentCreate> findByDocumentTypeInAndCustomerId(List<String> documentType,Long customerId);
 }
