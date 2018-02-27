@@ -44,6 +44,18 @@ public class CreateCustomerComponent {
 		sendCustomer(customerCreate);
 		 return customerCreate;
 	}
+	
+	
+	@Transactional
+	public void customerUpdate(String customerId,String kycStatus) {
+		CustomerCreate customer=	customerRepository.findByCustomerID(Long.valueOf(customerId));
+		logger.info(customer.getKycStatus());
+		customer.setKycStatus(kycStatus);
+		logger.info(customer.getKycStatus());
+		customerRepository.save(customer);
+		logger.info(customer.getKycStatus());
+	
+	}
 
 	private void sendCustomer(CustomerCreate customerCreate) {
 		ObjectMapper mapperObj = new ObjectMapper();
