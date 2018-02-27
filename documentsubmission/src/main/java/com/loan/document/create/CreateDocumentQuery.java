@@ -4,7 +4,11 @@ import java.io.Serializable;
 
 public class CreateDocumentQuery implements Serializable {
 
+	private static final long serialVersionUID = 1L;
+
 	private Long documentId;
+
+	private Long customerId;
 
 	private String documentName;
 
@@ -22,6 +26,14 @@ public class CreateDocumentQuery implements Serializable {
 
 	public void setDocumentId(Long documentId) {
 		this.documentId = documentId;
+	}//
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
 	}
 
 	public String getDocumentName() {

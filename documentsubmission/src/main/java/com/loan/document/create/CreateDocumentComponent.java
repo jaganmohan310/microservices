@@ -31,7 +31,10 @@ public class CreateDocumentComponent {
 	}
 
 	private DocumentCreate convertdocumentCreateEntity(CreateDocumentQuery query) {
+
 		DocumentCreate documentCreate = new DocumentCreate();
+		documentCreate.setDocumentId(query.getDocumentId());
+		documentCreate.setCustomerId(query.getCustomerId());
 		documentCreate.setDocumentName(query.getDocumentName());
 		documentCreate.setDocumentStatus(query.getDocumentStatus());
 		documentCreate.setDocumentType(query.getDocumentType());

@@ -15,9 +15,11 @@ import javax.persistence.Table;
 public class DocumentCreate implements Serializable {
 
 	@Id
-	@SequenceGenerator(name = "DOCUMENT_ID", sequenceName = "DOCUMENT_CREATE_SEQ", allocationSize = 1)
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
+	@Column(name = "DOCUMENT_ID")
 	private Long documentId;
+	
+	@Column(name="CUSTOMER_ID")
+	private Long customerId;
 
 	@Column(name = "DOCUMENT_NAME", nullable = false, insertable = true, updatable = true, length = 125)
 	private String documentName;
@@ -33,6 +35,14 @@ public class DocumentCreate implements Serializable {
 
 	@Column(name = "DOCUMENT_STATUS", insertable = true, updatable = true)
 	private String documentStatus;
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
 
 	public Long getDocumentId() {
 		return documentId;
