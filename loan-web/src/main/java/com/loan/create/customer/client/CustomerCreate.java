@@ -1,9 +1,9 @@
-package com.brownfield.pss.client;
+package com.loan.create.customer.client;
 
  
 public class CustomerCreate {
 
-  	long id;
+  	/*long id;
 	
 	String flightNumber;
 	String origin;
@@ -89,7 +89,7 @@ public class CustomerCreate {
 	public String toString() {
 		return "Flight [id=" + id + ", flightNUmber=" + flightNumber + ", origin=" + origin + ", destination="
 				+ destination + ", flightDate=" + flightDate + ", fares=" + fares + "]";
-	}
+	}*/
 
  
 	

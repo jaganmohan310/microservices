@@ -10,7 +10,7 @@
 <div style="text-align: center;">
 <br>
 <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Document Created Successfully</h1></div><br/>
-	<div><h2>FirstName:${name.documentId}</h2></div><br/>
+	<div><h2>DocumetId:${name.documentId}</h2></div><br/>
 	<div><h2>LastName:${name.documentName}</h2></div><br/>
 	<div><h2>documentType:${name.documentType}</h2></div><br/>
 	<div><h2>ValidFrom:${name.documentValidFrom}</h2></div><br/>

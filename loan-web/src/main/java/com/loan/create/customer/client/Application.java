@@ -9,7 +9,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 
 @EnableGlobalMethodSecurity
 @SpringBootApplication
-@ComponentScan({"com.loan.create.customer.client","com.loan.document.controller","com.loan.create.account.controller","com.loan.search.customer.controller","com.loan.product.controller"})
+@ComponentScan({ "com.loan.create.customer.client", "com.loan.document.controller",
+		"com.loan.create.account.controller", "com.loan.search.customer.controller", "com.loan.product.controller" })
 public class Application {
 	private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -17,4 +18,4 @@ public class Application {
 		SpringApplication.run(Application.class, args);
 	}
 
-	}
+}
