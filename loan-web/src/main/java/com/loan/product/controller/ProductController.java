@@ -27,7 +27,7 @@ public class ProductController {
 	
 	@RequestMapping(value = "/addProduct", method = RequestMethod.POST)
 	public String greetingSubmit(@ModelAttribute("product") CreateProductQuery product, Model model) {
-		CreateProductQuery query = productClient.postForObject("http://localhost:8090/productcreate/productcreatepath", product, CreateProductQuery.class);
+		CreateProductQuery query = productClient.postForObject("http://localhost:8095/productcreate/productcreatepath", product, CreateProductQuery.class);
 		model.addAttribute("name", query);
 		return "productCreateResult";
 	}

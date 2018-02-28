@@ -10,7 +10,7 @@
 <div style="text-align: center;">
 <br>
 <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Product Created Successfully</h1></div><br/>
-    <div><h2>product_ID:${name.product_ID}</h2></div><br/>
+    <div><h2>productID:${name.product_ID}</h2></div><br/>
 	<div><h2>productType:${name.productType}</h2></div><br/>
 	<div><h2>productName:${name.productName}</h2></div><br/>
 	<div><h2>interestRate:${name.interestRate}</h2></div><br/>

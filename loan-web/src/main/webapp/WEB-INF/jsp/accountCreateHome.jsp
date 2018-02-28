@@ -13,6 +13,12 @@
       	<div>
 		   	<h2><form:input class="input100" type="text" name="accountNumber" placeholder="Account Number" required="required" path="accountNumber"/></h2>
 	  	</div>
+	  	<div>
+		   	<h2><form:input class="input100" type="text" name="customerId" placeholder="customerId" required="required" path="customerId"/></h2>
+	  	</div>
+	  	<div>
+		   	<h2><form:input class="input100" type="text" name="productType" placeholder="productType" required="required" path="productType"/></h2>
+	  	</div>
       	<div>
 		   	<h2><form:input class="input100" type="text" name="accountName" placeholder="Account Name" required="required" path="accountName"/></h2>
 	  	</div>

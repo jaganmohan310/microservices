@@ -42,7 +42,7 @@ public class DocumentController {
 		String documentType = documents.getDocumentType();
 		System.out.println("documentType:" + documentType);
 		CreateDocumentQuery query = documentCreate.postForObject(
-				"http://localhost:8090/documentcreate/documentcreatepath/", documents, CreateDocumentQuery.class);
+				"http://localhost:8093/documentcreate/documentcreatepath/", documents, CreateDocumentQuery.class);
 		model.addAttribute("name", query);
 		return "documentCreateResult";
 	}

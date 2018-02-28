@@ -23,7 +23,7 @@ public class CustomerController {
 	public String submit(@ModelAttribute("customer") CreateCustomerQuery customer, BindingResult result,
 			ModelMap model) {
 		CreateCustomerQuery query = custmerCreate.postForObject(
-				"http://localhost:8090/customercreate/customercreatepath/", customer, CreateCustomerQuery.class);
+				"http://localhost:8091/customercreate/customercreatepath/", customer, CreateCustomerQuery.class);
 		model.addAttribute("name", query);
 		return "customerCreateResult";
 	}

@@ -28,9 +28,9 @@ public class CreateAccountComponent {
 
 	@Transactional
 	public AccountCreate accountCreate(CreateAccountQuery query) throws Exception {
-		Product product = createProductRepository.findByProductType(query.getProductType());
-		Customer customer	= customerRepository.findByCustomerId(query.getCustomerId());
-		customerValidation(query, product, customer);
+		//Product product = createProductRepository.findByProductType(query.getProductType());
+		//Customer customer	= customerRepository.findByCustomerId(query.getCustomerId());
+		//customerValidation(query, product, customer);
 		AccountCreate accountCreate = accountRepository.save(convertAccountCreateEntity(query));
 		return accountCreate;
 	}
@@ -84,6 +84,7 @@ public class CreateAccountComponent {
 	}
 
 	private AccountCreate convertAccountCreateEntity(CreateAccountQuery query) {
+		System.out.println("******Server******" + query.getFirstNextInstallmentDate());
 		AccountCreate accountCreate = new AccountCreate();
 		accountCreate.setCustomerId(query.getCustomerId());
 		accountCreate.setProductType(query.getProductType());

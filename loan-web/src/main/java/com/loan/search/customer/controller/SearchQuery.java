@@ -2,14 +2,32 @@ package com.loan.search.customer.controller;
 
 public class SearchQuery {
 
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getSocialSecuirtyId() {
+		return socialSecuirtyId;
+	}
+	public void setSocialSecuirtyId(String socialSecuirtyId) {
+		this.socialSecuirtyId = socialSecuirtyId;
+	}
+	public String getContactNumber() {
+		return contactNumber;
+	}
+	public void setContactNumber(String contactNumber) {
+		this.contactNumber = contactNumber;
+	}
 	private String lastName;
 	private String socialSecuirtyId;
-	private Long customerID;
+	/*private Long customerID;
 	private String firstName;
 	private String dateofBirth;
-	private Character gender;
+	private Character gender;*/
 	private String contactNumber;
-	private String emailId;
+	/*private String emailId;
 	private String communicationAdreess;
 	private String residentialAdreess;
 
@@ -108,5 +126,5 @@ public class SearchQuery {
 	public void setSocialSecuirtyId(String socialSecuirtyId) {
 		this.socialSecuirtyId = socialSecuirtyId;
 	}
-
+*/
 }

@@ -16,9 +16,7 @@
 	  	<div>
 		   	<h2><form:input class="input100" type="text" name="socialSecuirtyId" placeholder="Social Secuirty Id" path="socialSecuirtyId"/></h2>
 	  	</div>
-		<div>
-		   	<h2><form:input class="input100" type="date" name="dateofBirth" placeholder="Date Of Birth" path="dateofBirth"/></h2>
-	  	</div>
+		
 		<div>
 		   	<h2><form:input class="input100" type="number" name="contactNumber" placeholder="Contact Number" path="contactNumber"/></h2>
 	  	</div>	

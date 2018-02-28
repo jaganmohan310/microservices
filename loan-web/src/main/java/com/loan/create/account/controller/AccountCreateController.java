@@ -20,8 +20,9 @@ public class AccountCreateController {
 	@RequestMapping(value = "/accountCreate", method = RequestMethod.POST)
 	public String createAccount(@ModelAttribute("account") CreateAccountQuery account, BindingResult result,
 			ModelMap model) {
-		CreateAccountQuery query = createAccount.postForObject("http://localhost:8090/accountcreate/accountcreatepath/",
-				account, CreateAccountQuery.class);
+		System.out.println("************" + account.getFirstNextInstallmentDate());
+		AccountCreate query = createAccount.postForObject("http://localhost:8094/accountcreate/accountcreatepath/",
+				account, AccountCreate.class);
 		model.addAttribute("name", query);
 		return "accountCreateResult";
 	}

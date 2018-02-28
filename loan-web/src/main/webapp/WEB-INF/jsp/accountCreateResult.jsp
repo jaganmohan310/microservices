@@ -12,6 +12,7 @@
 <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Account Created Successfully</h1></div><br/>
     <div><h2>Account Number:${name.accountNumber}</h2></div><br/>
 	<div><h2>FirstName:${name.accountName}</h2></div><br/>
+	<div><h2>productType:${name.productType}</h2></div><br/>
 	<div><h2>LastName:${name.approvedLoanAmount}</h2></div><br/>
 	<div><h2>interestRate:${name.interestRate}</h2></div><br/>
 	<div><h2>ValidFrom:${name.loanTenure}</h2></div><br/>

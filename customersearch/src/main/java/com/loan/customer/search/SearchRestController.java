@@ -22,8 +22,8 @@ public class SearchRestController {
 	 
 
 	@RequestMapping(value = "/get", method = RequestMethod.POST)
-	public List<CustomerSearch> search(@RequestBody SearchQuery query) {
-		List<CustomerSearch> customerSearch= searchComponent.search(query);
+	public CustomerSearch search(@RequestBody SearchQuery query) {
+		CustomerSearch customerSearch= searchComponent.search(query);
 		return customerSearch;
 		
 	}

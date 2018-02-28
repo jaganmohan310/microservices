@@ -10,8 +10,6 @@
 <body class="backGroundImage" bgcolor="#00c7c7">
 <div style="text-align: center;">
 <br>
-<% String customerId=request.getParameter("name.customerID");%>
-<%if(customerId!=null){%>
 <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Customer Found</h1></div><br/>
     <div><h2>CustomerId:                  ${name.customerID}</h2></div><br/>
       <div><h2>LastName:                  ${name.lastName}</h2></div><br/>
@@ -23,9 +21,6 @@
 <div><h2>emailId:                     ${name.emailId}</h2></div><br/>
 <div><h2>communicationAdreess:        ${name.communicationAdreess}</h2></div><br/>
 <div><h2>residentialAdreess:          ${name.residentialAdreess}</h2></div><br/><br/><br/>		
-<%} else{ %>
-	<div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Customer Not Found</h1></div><br/><br/><br/><br/><br/><br/>	
-<%}%>
 <div style="width: 1200px; margin: 0 auto; background: #000; color: #fff;"><h1>Evry India Pvt Ltd</h1></div>
 </div>
 </body>

@@ -1,13 +1,16 @@
-package com.loan.account.create;
+package com.loan.create.account.controller;
 
 import java.io.Serializable;
 
-public class CreateAccountQuery implements Serializable {
+public class AccountCreate implements Serializable {
 
+	
 	/**
-	 * 
+	 * serialVersionUID
 	 */
-	private static final long serialVersionUID = -8228095967717285638L;
+	private static final long serialVersionUID = 4449755910624119662L;
+
+	private Long accountNumber;
 
 	private String accountName;
 	
@@ -30,6 +33,14 @@ public class CreateAccountQuery implements Serializable {
 	private Long arrears;
 
 	private Long charges;
+
+	public Long getAccountNumber() {
+		return accountNumber;
+	}
+
+	public void setAccountNumber(Long accountNumber) {
+		this.accountNumber = accountNumber;
+	}
 
 	public String getAccountName() {
 		return accountName;
@@ -102,7 +113,7 @@ public class CreateAccountQuery implements Serializable {
 	public void setCharges(Long charges) {
 		this.charges = charges;
 	}
-
+	
 	public String getProductType() {
 		return productType;
 	}
@@ -118,6 +129,6 @@ public class CreateAccountQuery implements Serializable {
 	public void setCustomerId(Long customerId) {
 		this.customerId = customerId;
 	}
-	
+
 
 }

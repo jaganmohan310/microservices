@@ -24,6 +24,15 @@ public class CreateProductQuery implements Serializable {
 	private Long minLoanAmount;
 
 	private Long maxLoanAmount;
+	private Long product_ID;
+	
+	public Long getProduct_ID() {
+		return product_ID;
+	}
+
+	public void setProduct_ID(Long product_ID) {
+		this.product_ID = product_ID;
+	}
 
 	public String getProductType() {
 		return productType;

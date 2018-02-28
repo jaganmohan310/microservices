@@ -18,11 +18,30 @@ public class CreateAccountQuery implements Serializable {
 
 	private Long first_Next_InstallmentAmount;
 
-	private Long firstNextInstallmentDate;
+	private String firstNextInstallmentDate;
 
 	private Long arrears;
 
 	private Long charges;
+	private Long customerId;
+
+	private String productType;
+
+	public String getProductType() {
+		return productType;
+	}
+
+	public void setProductType(String productType) {
+		this.productType = productType;
+	}
+
+	public Long getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(Long customerId) {
+		this.customerId = customerId;
+	}
 
 	public Long getAccountNumber() {
 		return accountNumber;
@@ -80,11 +99,11 @@ public class CreateAccountQuery implements Serializable {
 		this.first_Next_InstallmentAmount = first_Next_InstallmentAmount;
 	}
 
-	public Long getFirstNextInstallmentDate() {
+	public String getFirstNextInstallmentDate() {
 		return firstNextInstallmentDate;
 	}
 
-	public void setFirstNextInstallmentDate(Long firstNextInstallmentDate) {
+	public void setFirstNextInstallmentDate(String firstNextInstallmentDate) {
 		this.firstNextInstallmentDate = firstNextInstallmentDate;
 	}
 

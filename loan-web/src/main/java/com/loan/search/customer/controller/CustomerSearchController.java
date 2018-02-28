@@ -22,8 +22,9 @@ public class CustomerSearchController {
 	
 	@RequestMapping(value = "/searchCustomer", method = RequestMethod.POST)
 	public String greetingSubmit(@ModelAttribute("search") SearchQuery search, Model model) {
-		SearchQuery query = searchClient.postForObject("http://localhost:8090/search/get", search, SearchQuery.class);
+		CustomerSearch query = searchClient.postForObject("http://localhost:8092/search/get", search, CustomerSearch.class);
 		model.addAttribute("name", query);
+		System.out.println("In search method");
 		return "customerSearchResult";
 	}
 	

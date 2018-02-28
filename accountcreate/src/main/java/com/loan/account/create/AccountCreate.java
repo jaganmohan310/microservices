@@ -51,7 +51,7 @@ public class AccountCreate implements Serializable {
 	private Long first_Next_InstallmentAmount;
 
 	@Column(name = "FIRST_NEXT_INSTALLMENT_DATE", nullable = false, insertable = true, updatable = true)
-	private Long firstNextInstallmentDate;
+	private String firstNextInstallmentDate;
 
 	@Column(name = "ARREARS", nullable = false, insertable = true, updatable = true)
 	private Long arrears;
@@ -115,11 +115,11 @@ public class AccountCreate implements Serializable {
 		this.first_Next_InstallmentAmount = first_Next_InstallmentAmount;
 	}
 
-	public Long getFirstNextInstallmentDate() {
+	public String getFirstNextInstallmentDate() {
 		return firstNextInstallmentDate;
 	}
 
-	public void setFirstNextInstallmentDate(Long firstNextInstallmentDate) {
+	public void setFirstNextInstallmentDate(String firstNextInstallmentDate) {
 		this.firstNextInstallmentDate = firstNextInstallmentDate;
 	}
 

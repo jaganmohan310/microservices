@@ -24,8 +24,8 @@ public class SearchComponent {
 	}
 
 	@Transactional
-	public List<CustomerSearch> search(SearchQuery query) {
-		List<CustomerSearch> customerSearchList = customerRepository
+	public CustomerSearch search(SearchQuery query) {
+		CustomerSearch customerSearchList = customerRepository
 				.findByLastNameOrSocialSecuirtyId(query.getLastName(), query.getSocialSecuirtyId());
 		return customerSearchList;
 	}
